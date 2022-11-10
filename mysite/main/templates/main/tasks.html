@@ -1,0 +1,28 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Задачи
+{% endblock %}
+
+{% block content %}
+    <h1>Страница задач банды Валерыча на предстоящее время.</h1>
+    {% if tasks %}
+             {% for i in tasks  %}
+             <div class = "alert alert-success mt-2">
+
+                <h3> {{i.id}}.{{ i.title }}.</h3>
+
+                 <p> {{ i.task }}</p>
+                 <p>Опубликовано: {{ i.published }}</p>
+              </div>
+              {% endfor %}
+
+   {% else %}
+         <p>Записи отсуствуют..</p>
+   {% endif %}
+{% endblock %}
+
+
+
+
+
